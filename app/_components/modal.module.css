@@ -1,0 +1,50 @@
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.25);
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.modalHeader {
+  color:black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.modalHeader h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.closeButton {
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modalBody {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+  .modal {
+    margin: 0 1rem;
+  }
+}

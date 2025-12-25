@@ -1,0 +1,107 @@
+
+.wrapper {
+  padding: 3rem clamp(1.5rem, 4vw, 3rem);
+  background-color: #f7f9fc;
+}
+
+.hero {
+  max-width: 44rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero h1 {
+  font-size: 2.1rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.section {
+  max-width: 52rem;
+  margin-bottom: 2.5rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.section p + p {
+  margin-top: 0.5rem;
+}
+
+.roadmap {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  counter-reset: roadmap;
+}
+
+.roadmap li {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.25rem 1.1rem;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  position: relative;
+}
+
+.roadmap li::before {
+  counter-increment: roadmap;
+  content: counter(roadmap);
+  position: absolute;
+  left: -0.9rem;
+  top: 1.1rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background-color: #0a2b4c;
+  color: #ffffff;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.roadmap h3 {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.lifeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.lifeBlock {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.lifeBlock h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+}
+
+.signature {
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: #0a2b4c;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .lifeGrid {
+    grid-template-columns: 1fr;
+  }
+}
