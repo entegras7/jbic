@@ -13,18 +13,23 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus('loading');
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
     const payload = {
-      fullName: formData.get('fullName'),
+      type: 'contact',
+      name: formData.get('fullName'),
       email: formData.get('email'),
       phone: formData.get('phone'),
       city: formData.get('city'),
-      preferredProduct: formData.get('preferredProduct'),
-      bestTimeToCall: formData.get('bestTimeToCall'),
-      notes: formData.get('notes'),
+      product: formData.get('preferredProduct'),
+      notes: `${formData.get('notes') || ''}\nPreferred time: ${
+        formData.get('bestTimeToCall') || '-'
+      }`,
     };
 
-    const res = await fetch('/api/contact', {
+    debugger
+    const res = await fetch('/api/enquiry', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -32,7 +37,7 @@ export default function ContactForm() {
 
     if (res.ok) {
       setStatus('success');
-      e.currentTarget.reset();
+      form.reset();
     } else {
       setStatus('error');
     }
