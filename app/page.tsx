@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import QuoteFormModal from './_components/getQuoteForm';
+import HeroSlider from './_components/homeSlider';
 
 export default function HomePage() {
   return (
@@ -19,15 +20,8 @@ export default function HomePage() {
             <QuoteFormModal variant="secondary" />
           </div>
 
-          <div className={styles.heroImageWrapper}>
-            <Image
-              src="/protection.jpg"
-              alt="Insurance advisors discussing coverage plans"
-              fill
-              priority
-              className={styles.heroImage}
-              sizes="(min-width: 900px) 40vw, 100vw"
-            />
+          <div>
+            <HeroSlider />
           </div>
         </section>
 
